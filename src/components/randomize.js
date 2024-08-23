@@ -1,18 +1,21 @@
-import React from "react";
 
 export default function Randomize() {
 
+    const groups = ['A', 'B', 'C', 'D'];
+
     function createBlockRandomization(numBlocks, blockSize) {
-        const groups = ['A', 'B'];
+        
         let blockRandomization = [];
 
         for (let i = 0; i < numBlocks; i++) {
             let block = [];
 
             // Fill the block with equal numbers of each group
-            for (let j = 0; j < blockSize / 2; j++) {
+            for (let j = 0; j < blockSize / 4; j++) {
                 block.push(groups[0]);
                 block.push(groups[1]);
+                block.push(groups[2]);
+                block.push(groups[3]);
             }
 
             // Shuffle the block
@@ -33,7 +36,7 @@ export default function Randomize() {
     }
 
     // Example usage
-    const numBlocks = 5;
+    const numBlocks = 6;
     const blockSize = 4; // Block size must be even (e.g., 2 participants in each group)
     const randomization = createBlockRandomization(numBlocks, blockSize);
 
@@ -42,8 +45,20 @@ export default function Randomize() {
     return (
 
         <>
-
-        Hello
+            <div>
+                Number of Blocks: {numBlocks}
+            </div>
+            <div>
+                Block Size: {blockSize}
+            </div>
+            <div>
+                Groups: {groups[0]}, {groups[1]}, {groups[2]}, {groups[3]}
+            </div>
+            <ul>
+                {randomization.map((item, index) =>
+                    <li key={index}>{index + 1}  :  {item}</li>
+                )}
+            </ul>
 
         </>
     )
