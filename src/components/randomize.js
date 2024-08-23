@@ -36,7 +36,7 @@ export default function Randomize() {
     }
 
     // Example usage
-    const numBlocks = 6;
+    const numBlocks = 3;
     const blockSize = 4; // Block size must be even (e.g., 2 participants in each group)
     const randomization = createBlockRandomization(numBlocks, blockSize);
 
@@ -52,11 +52,11 @@ export default function Randomize() {
                 Block Size: {blockSize}
             </div>
             <div>
-                Groups: {groups[0]}, {groups[1]}, {groups[2]}, {groups[3]}
+                Therapy: {groups[0]}, {groups[1]}, {groups[2]}, {groups[3]}
             </div>
             <ul>
                 {randomization.map((item, index) =>
-                    <li key={index}>{index + 1}  :  {item}</li>
+                    <li className='colored-boxA' key={index}>{index + 1}  :  {item}</li>
                 )}
             </ul>
 
