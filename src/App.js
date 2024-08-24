@@ -1,7 +1,7 @@
 
 import './App.css';
 
-import Randomize from './components/randomize';
+import Randomize from './components/randomize1';
 
 function App() {
   return (
