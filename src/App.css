@@ -1,7 +1,39 @@
-.colored-boxA {
-    width: 50px;
-    height: 50px;
-    background-color: rgb(196, 230, 241);
-    border: 2px solid #2c3e50;
-    border-radius: 10px;
+.code {
+    font-family: Menlo, Monaco, 'Courier New', monospace;
+    font-size: 8;
+    font-weight: normal;
+    color: white;
+    background-color: black;
+}
+
+.spanY {
+    color: yellow;
+}
+
+.spanG {
+    color: rgb(31, 172, 31);
+}
+
+.spanO {
+    color: rgb(196, 140, 36);
+}
+
+.spanB {
+    color:rgb(104, 128, 198);
+}
+
+.spanP {
+    color: magenta;
+}
+
+.spanLG {
+    color:rgb(199, 235, 199);
+}
+
+.spanLB {
+    color: rgb(83, 174, 239)
+}
+
+.indent {
+    text-indent: 40px;
 }

@@ -13,7 +13,7 @@ treatment_blocks <-
 
 # Visualize the treatment orders
 treatment_colors <- brewer.pal(n_treatments, "Purples")
-par(xpd = TRUE, mar = c(5, 4, 4, 8))
+par(xpd = TRUE, mar = c(5, 4, 4, 11))
 image(treatment_blocks,
       col = treatment_colors,
       xlab = "Treatment Order", ylab = "Block",

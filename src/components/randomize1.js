@@ -43,34 +43,44 @@ export default function randomize1() {
     return (
 
         <>
-            <div>library(RColorBrewer)</div>
-            <div># In how many blocks will subjects be randomized?</div>
-            <div>n_blocks &lt;- 3</div>
-            <div># How many treatments are we using?</div>
-            <div>n_treatments &lt;- 4</div>
-            <div># Generate random orders of treatments</div>
-            <div>treatment_blocks &lt;-</div>
-            <div>sample(n_treatments, n_treatments) |&gt;</div>
-            <div>replicate(n = n_blocks)</div>
-            <div># Visualize the treatment orders</div>
-            <div>treatment_colors &lt;- brewer.pal(n_treatments, "Purples")</div>
-            <div>par(xpd = TRUE, mar = c(5, 4, 4, 11))</div>
-            <div>image(treatment_blocks,</div>
-            <div>col = treatment_colors,</div>
-            <div>xlab = "Treatment Order", ylab = "Block",</div>
-            <div>axes = FALSE)</div>
-            <div>axis(1, at = seq(0, 1, length.out = n_treatments), labels = seq(n_treatments))</div>
-            <div>axis(2, at = seq(0, 1, length.out = n_blocks), labels = seq(n_blocks))</div>
-            <div>legend(1 + 1.25 / n_treatments, 1, title = "Treatments",</div>
-            <div>legend = LETTERS[seq(n_treatments)], fill = treatment_colors)</div>
+            <div className="code">
+                <div><br></br></div>
+                <div>library<span className="spanY">(</span>RColorBrewer<span className="spanY">)</span></div>
+                <div><br></br></div>
+                <div><span className="spanG"># In how many blocks will subjects be randomized?</span></div>
+                <div>n_blocks &lt;- <span className="spanLG">3</span></div>
+                <div><br></br></div>
+                <div><span className="spanG"># How many treatments are we using?</span></div>
+                <div>n_treatments &lt;- <span className="spanLG">4</span></div>
+                <div><br></br></div>
+                <div><span className="spanG"># Generate random orders of treatments</span></div>
+                <div>treatment_blocks &lt;-</div>
+                <div className="indent">sample<span className="spanY">(</span>n_treatments, n_treatments<span className="spanY">)</span> |&gt;</div>
+                <div className="indent">replicate<span className="spanY">(</span>n = n_blocks<span className="spanY">)</span></div>
+                <div><br></br></div>
+                <div><span className="spanG"># Visualize the treatment orders</span></div>
+                <div>treatment_colors &lt;- brewer.pal<span className="spanY">(</span>n_treatments, <span className="spanO">"Purples"</span><span className="spanY">)</span></div>
+                <div>par<span className="spanY">(</span>xpd = <span className="spanB">TRUE</span>, mar = c<span className="spanP">(</span><span className="spanLG">5</span>, <span className="spanLG">4</span>, <span className="spanLG">4</span>, <span className="spanLG">11</span><span className="spanP">)</span><span className="spanY">)</span></div>
+                <div>image<span className="spanY">(</span>treatment_blocks,</div>
+                <div className="indent">col = treatment_colors,</div>
+                <div className="indent">xlab = <span className="spanO">"Treatment Order"</span>, ylab = <span className="spanO">"Block"</span>,</div>
+                <div className="indent">axes = <span className="spanB">FALSE</span><span className="spanY">)</span></div>
+                <div>axis<span className="spanY">(</span><span className="spanLG">1</span>, at = seq<span className="spanP">(</span><span className="spanLG">0</span>, <span className="spanLG">1</span>, length.out = n_treatments<span className="spanP">)</span>, labels = seq<span className="spanP">(</span>n_treatments<span className="spanP">)</span><span className="spanY">)</span></div>
+                <div>axis<span className="spanY">(</span><span className="spanLG">2</span>, at = seq<span className="spanP">(</span><span className="spanLG">0</span>, <span className="spanLG">1</span>, length.out = n_blocks<span className="spanP">)</span>, labels = seq<span className="spanP">(</span>n_blocks<span className="spanP">)</span><span className="spanY">)</span></div>         
+                <div>legend<span className="spanY">(</span><span className="spanLG">1</span> + <span className="spanLG">1.25</span> / n_treatments, <span className="spanLG">1</span>, title = <span className="spanO">"Treatments"</span>,</div>
+                <div className="indent">legend = LETTERS<span className="spanP">[</span>seq<span className="spanLB">(</span>n_treatments<span className="spanLB">)</span><span className="spanP">]</span>, fill = treatment_colors<span className="spanY">)</span></div>
+                <br></br>
+            </div>
 
             <div>
+                <br></br>
+                <br></br>
                 <input
                     type="button"
                     onClick={submitRunClick}
                     value="RUN" />
             </div>
-    
+
         </>
     )
 
