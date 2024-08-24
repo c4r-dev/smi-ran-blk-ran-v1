@@ -1,14 +1,18 @@
-
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 
-import Randomize from './components/randomize1';
+import Randomize1 from './components/randomize1';
 
-function App() {
+export default function App() {
   return (
-    <div>
-      <Randomize />
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Randomize1 />} />
+
+          </Routes>
+      </BrowserRouter>
+    </>
   );
 }
-
-export default App;
