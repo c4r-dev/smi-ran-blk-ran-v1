@@ -1,65 +1,76 @@
+import React from "react";
 
-export default function Randomize() {
 
-    const groups = ['A', 'B', 'C', 'D'];
+export default function randomize1() {
 
-    function createBlockRandomization(numBlocks, blockSize) {
-        
-        let blockRandomization = [];
+    let numBlocks = 3;
+    let blockSize = 4;
+    let randomization = []
 
-        for (let i = 0; i < numBlocks; i++) {
-            let block = [];
+    const submitRunClick = () => {
 
-            // Fill the block with equal numbers of each group
-            for (let j = 0; j < blockSize / 4; j++) {
-                block.push(groups[0]);
-                block.push(groups[1]);
-                block.push(groups[2]);
-                block.push(groups[3]);
+        function createBlockRandomization(numBlocks, blockSize) {
+            let blockRandomization = [];
+            for (let i = 0; i < numBlocks; i++) {
+                let block = [];
+                // Fill the block with equal numbers of each group
+                for (let j = 0; j < blockSize / blockSize; j++) {
+                    block.push('light purple block')
+                    block.push('light+ purple block')
+                    block.push('light++ purple block')
+                    block.push('dark purple block')
+                }
+                // Shuffle the block
+                block = shuffleArray(block);
+                blockRandomization = blockRandomization.concat(block);
             }
-
-            // Shuffle the block
-            block = shuffleArray(block);
-            blockRandomization = blockRandomization.concat(block);
+            return blockRandomization;
         }
 
-        return blockRandomization;
-    }
-
-    // Utility function to shuffle an array
-    function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]]; // Swap
+        // Utility function to shuffle an array
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]]; // Swap
+            }
+            return array;
         }
-        return array;
+
+        randomization = createBlockRandomization(numBlocks, blockSize);
+        console.log(randomization)
     }
-
-    // Example usage
-    const numBlocks = 3;
-    const blockSize = 4; // Block size must be even (e.g., 2 participants in each group)
-    const randomization = createBlockRandomization(numBlocks, blockSize);
-
-    console.log(randomization);
 
     return (
 
         <>
-            <div>
-                Number of Blocks: {numBlocks}
-            </div>
-            <div>
-                Block Size: {blockSize}
-            </div>
-            <div>
-                Therapy: {groups[0]}, {groups[1]}, {groups[2]}, {groups[3]}
-            </div>
-            <ul>
-                {randomization.map((item, index) =>
-                    <li className='colored-boxA' key={index}>{index + 1}  :  {item}</li>
-                )}
-            </ul>
+            <div>library(RColorBrewer)</div>
+            <div># In how many blocks will subjects be randomized?</div>
+            <div>n_blocks &lt;- 3</div>
+            <div># How many treatments are we using?</div>
+            <div>n_treatments &lt;- 4</div>
+            <div># Generate random orders of treatments</div>
+            <div>treatment_blocks &lt;-</div>
+            <div>sample(n_treatments, n_treatments) |&gt;</div>
+            <div>replicate(n = n_blocks)</div>
+            <div># Visualize the treatment orders</div>
+            <div>treatment_colors &lt;- brewer.pal(n_treatments, "Purples")</div>
+            <div>par(xpd = TRUE, mar = c(5, 4, 4, 11))</div>
+            <div>image(treatment_blocks,</div>
+            <div>col = treatment_colors,</div>
+            <div>xlab = "Treatment Order", ylab = "Block",</div>
+            <div>axes = FALSE)</div>
+            <div>axis(1, at = seq(0, 1, length.out = n_treatments), labels = seq(n_treatments))</div>
+            <div>axis(2, at = seq(0, 1, length.out = n_blocks), labels = seq(n_blocks))</div>
+            <div>legend(1 + 1.25 / n_treatments, 1, title = "Treatments",</div>
+            <div>legend = LETTERS[seq(n_treatments)], fill = treatment_colors)</div>
 
+            <div>
+                <input
+                    type="button"
+                    onClick={submitRunClick}
+                    value="RUN" />
+            </div>
+    
         </>
     )
 
