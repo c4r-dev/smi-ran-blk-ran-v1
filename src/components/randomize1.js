@@ -25,6 +25,7 @@ export default function Randomize1() {
                 blockRandomization = blockRandomization.concat(block);
             }
 
+            console.log(blockRandomization)
             return blockRandomization;
         }
 
@@ -38,7 +39,6 @@ export default function Randomize1() {
         }
 
         setRandomization(createBlockRandomization(numBlocks, blockSize));
-        console.log(randomization)
     }
 
     function arrayOutput(item) {
@@ -64,10 +64,10 @@ export default function Randomize1() {
                         <div>library<span className="spanY">(</span>RColorBrewer<span className="spanY">)</span></div>
                         <div><br></br></div>
                         <div><span className="spanG"># In how many blocks will subjects be randomized?</span></div>
-                        <div>n_blocks &lt;- <span className="spanLG">3</span></div>
+                        <div>n_blocks &lt;- <span className="spanLG">{numBlocks}</span></div>
                         <div><br></br></div>
                         <div><span className="spanG"># How many treatments are we using?</span></div>
-                        <div>n_treatments &lt;- <span className="spanLG">4</span></div>
+                        <div>n_treatments &lt;- <span className="spanLG">{blockSize}</span></div>
                         <div><br></br></div>
                         <div><span className="spanG"># Generate random orders of treatments</span></div>
                         <div>treatment_blocks &lt;-</div>
