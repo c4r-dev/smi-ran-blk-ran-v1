@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export default function Randomize1() {
 
-    let numBlocks = 3;
+    let numBlocks = 6;
     let blockSize = 4;
     const [randomization, setRandomization] = useState([])
 
