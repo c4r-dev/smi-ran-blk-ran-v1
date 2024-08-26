@@ -49,9 +49,9 @@
 
 .block0 {
     background-color: white;
-    border: 1px solid #333;  
+    /* border: 1px solid #333;   */
     display: flex;
-    justify-content: right;
+    justify-content: center;
     transform: rotate(270);
     align-items: center;
     color: black;
