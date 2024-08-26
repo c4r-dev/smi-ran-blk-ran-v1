@@ -41,10 +41,21 @@
 
 .block-chart {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(4, 1fr); 
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr); 
     width: 500px; /* Total width of the chart */
     height: 500px; /* Total height of the chart */
+}
+
+.block0 {
+    background-color: white;
+    border: 1px solid #333;  
+    display: flex;
+    justify-content: right;
+    transform: rotate(270);
+    align-items: center;
+    color: black;
+    font-size: 1.2em;
 }
 
 .block1 {
