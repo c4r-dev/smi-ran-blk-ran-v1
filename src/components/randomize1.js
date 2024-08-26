@@ -25,14 +25,14 @@ export default function Randomize1() {
                 blockRandomization = blockRandomization.concat(block);
             }
 
-            console.log(blockRandomization)
+            // console.log(blockRandomization)
 
             let outArray = []
             let num = 0
             for (let k = 0; k < blockRandomization.length; k++) {
                 if (k % blockSize === 0) {
                     num = 6 - (k / blockSize)
-                    if (num===3){
+                    if (num === 3) {
                         outArray.push('Block')
                     } else {
                         outArray.push(' ')
@@ -47,13 +47,13 @@ export default function Randomize1() {
             for (let k = 1; k <= blockSize; k++) {
                 outArray.push(k)
             }
-            
+
             outArray.push(' ')
             outArray.push(' ')
             for (let k = 1; k <= blockSize; k++) {
-                if (k===2){
+                if (k === 2) {
                     outArray.push('Treatment')
-                } else if (k===3) {
+                } else if (k === 3) {
                     outArray.push('Order')
                 } else {
                     outArray.push(' ')
@@ -77,7 +77,7 @@ export default function Randomize1() {
     }
 
     function arrayOutput(item) {
-        console.log(item)
+        // console.log(item)
         if (item === 'purple1') {
             return (<div className="block1"></div>)
         } else if (item === 'purple2') {
