@@ -47,12 +47,43 @@
     height: 500px; /* Total height of the chart */
 }
 
-.block0 {
+.block {
     background-color: white;
-    /* border: 1px solid #333;   */
+    font-family: sans-serif, Menlo, Monaco, 'Courier New', monospace;
     display: flex;
     justify-content: center;
-    transform: rotate(270);
+    transform: rotate(270deg);
+    align-items: center;
+    color: black;
+    font-size: 1.2em;
+}
+
+.treatment {
+    background-color: white;
+    font-family: sans-serif, Menlo, Monaco, 'Courier New', monospace;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: black;
+    font-size: 1.2em;
+}
+
+.order {
+    background-color: white;
+    font-family: sans-serif, Menlo, Monaco, 'Courier New', monospace;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-indent: 5px;
+    color: black;
+    font-size: 1.2em;
+}
+
+.block0 {
+    background-color: white;
+    font-family: sans-serif, Menlo, Monaco, 'Courier New', monospace;
+    display: flex;
+    justify-content: center;
     align-items: center;
     color: black;
     font-size: 1.2em;
@@ -110,7 +141,7 @@
     /* background-color: #4CAF50; */
     color: white;
     display: flex;
-    justify-content: center; /* Center content horizontally */
+    justify-content: left; /* Center content horizontally */
     align-items: center; /* Center content vertically */
     margin: 10px; /* Optional: space around the boxes */
     height: 100%; /* Make the boxes take up the full height of the container */
