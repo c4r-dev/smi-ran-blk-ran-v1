@@ -104,3 +104,7 @@
     margin: 10px; /* Optional: space around the boxes */
     height: 100%; /* Make the boxes take up the full height of the container */
 }
+
+.top {
+    font-family: sans-serif, Menlo, Monaco, 'Courier New', monospace;
+}

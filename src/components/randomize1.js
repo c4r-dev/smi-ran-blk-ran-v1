@@ -57,6 +57,11 @@ export default function Randomize1() {
     return (
 
         <>
+            <div className="top">
+                <h3>Stratified Randomization</h3>
+                <h2>Let's Visualize block randomization.</h2>
+            </div>
+
             <div className="container">
                 <div className="box">
                     <div className="code">
