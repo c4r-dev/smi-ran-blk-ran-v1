@@ -28,14 +28,18 @@ export default function Randomize1() {
             console.log(blockRandomization)
 
             let outArray = []
+            let num = 0
             for (let k = 0; k < blockRandomization.length; k++) {
-                if (k % numBlocks === 0) {
-                    outArray.push('white')
+                if (k % blockSize === 0) {
+                    num = 6 - (k / blockSize)
+                    outArray.push(num)
                 }
                 outArray.push(blockRandomization[k])
             }
-            for (let k=1; k<=numBlocks+1; k++){
-                outArray.push('white')
+
+            outArray.push(' ')
+            for (let k = 1; k <= blockSize; k++) {
+                outArray.push(k)
             }
 
             // return blockRandomization;
@@ -64,8 +68,8 @@ export default function Randomize1() {
             return (<div className="block3"></div>)
         } else if (item === 'purple4') {
             return (<div className="block4"></div>)
-        } else if (item === 'white') {
-            return (<div className="block0"></div>)
+        } else {
+            return (<div className="block0">{item}</div>)
         }
     }
 

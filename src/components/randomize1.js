@@ -32,14 +32,32 @@ export default function Randomize1() {
             for (let k = 0; k < blockRandomization.length; k++) {
                 if (k % blockSize === 0) {
                     num = 6 - (k / blockSize)
+                    if (num===3){
+                        outArray.push('Block')
+                    } else {
+                        outArray.push(' ')
+                    }
                     outArray.push(num)
                 }
                 outArray.push(blockRandomization[k])
             }
 
             outArray.push(' ')
+            outArray.push(' ')
             for (let k = 1; k <= blockSize; k++) {
                 outArray.push(k)
+            }
+            
+            outArray.push(' ')
+            outArray.push(' ')
+            for (let k = 1; k <= blockSize; k++) {
+                if (k===2){
+                    outArray.push('Treatment')
+                } else if (k===3) {
+                    outArray.push('Order')
+                } else {
+                    outArray.push(' ')
+                }
             }
 
             // return blockRandomization;
