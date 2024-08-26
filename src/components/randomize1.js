@@ -60,6 +60,13 @@ export default function Randomize1() {
             <div className="top">
                 <h3>Stratified Randomization</h3>
                 <h2>Let's Visualize block randomization.</h2>
+                <h4>Block randomization is as simple as hitting a button!</h4>
+                <h4>Free software packages such as <i>blockrand, randomizR, or pspych in R</i> can
+                    randomize your study.</h4>
+                <h4>But what is happening under the hood?</h4> 
+                <h4>    Hit "RUN" on this R code to see 
+                    a visualization of a block randomized study with 4 treatments.
+                </h4>
             </div>
 
             <div className="container">
