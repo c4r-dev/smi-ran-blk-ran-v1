@@ -27,11 +27,11 @@ export default function Randomize1() {
 
             // console.log(blockRandomization)
 
-            let outArray = []
+            let outArray = [' ', ' ', ' ', 'Treatme', 'nts', ' '];
             let num = 0
             for (let k = 0; k < blockRandomization.length; k++) {
                 if (k % blockSize === 0) {
-                    num = 6 - (k / blockSize)
+                    num = numBlocks - (k / blockSize)
                     if (num === 3) {
                         outArray.push('Block')
                     } else {
@@ -92,6 +92,10 @@ export default function Randomize1() {
             return (<div className="treatment">{item}</div>)
         } else if (item === 'Order') {
             return (<div className="order"> {item}</div>)
+        } else if (item === 'Treatme') {
+            return (<div className="treat">{item}</div>)
+        } else if (item === 'nts') {
+            return (<div className="ments"> {item}</div>)
         } else {
             return (<div className="block0">{item}</div>)
         }

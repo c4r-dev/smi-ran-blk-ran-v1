@@ -50,12 +50,33 @@
     font-size: 1.2em
 }
 
+.treat {
+    background-color: white;
+    font-family: sans-serif, Menlo, Monaco, 'Courier New', monospace;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    color: black;
+    font-size: 1.2em;
+}
+
+.ments {
+    background-color: white;
+    font-family: sans-serif, Menlo, Monaco, 'Courier New', monospace;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: black;
+    font-size: 1.2em;
+}
+
 .treatment {
     background-color: white;
     font-family: sans-serif, Menlo, Monaco, 'Courier New', monospace;
     display: flex;
     justify-content: left;
     align-items: center;
+    text-indent: 5px;
     color: black;
     font-size: 1.2em;
 }
@@ -153,7 +174,7 @@
 .block-chart {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(8, 1fr); 
+    grid-template-rows: repeat(9, 1fr); 
     width: 500px; /* Total width of the chart */
     height: 500px; /* Total height of the chart */
 }
