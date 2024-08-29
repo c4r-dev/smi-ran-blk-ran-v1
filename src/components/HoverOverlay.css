@@ -8,18 +8,17 @@
   .overlay-box {
     position: absolute;
     bottom: 100%; /* Position above the div */
-    left: 50%;
-    /* transform: translateX(-50%); */
+    left: 10%; /* transform: translateX(-50%); */
     background-color: #333;
     color: #fff;
     padding: 8px;
     border-radius: 4px;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     z-index: 1;
     opacity: 0;
     transition: opacity 0.3s;
     pointer-events: none;
-    text-indent: 40px;
+    /* text-indent: 10px; */
   }
   
   .hover-container:hover .overlay-box {

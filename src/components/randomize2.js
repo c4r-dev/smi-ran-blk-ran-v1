@@ -118,6 +118,7 @@ export default function Randomize1() {
             </div>
 
             <div className="container">
+
                 <div className="box">
                     <div className="code">
 
@@ -131,30 +132,46 @@ export default function Randomize1() {
 
                         <div><br></br></div>
 
+                        <div>
+                            <HoverOverlay overlayText="n_blocks <- 6: Defines that there are 6 blocks in the experiment.
+n_treatments <- 4: Defines that there are 4 different treatments to be applied.">
+                                <div><span className="spanG"># In how many blocks will subjects be randomized?</span></div>
+                                <div>n_blocks &lt;- <span className="spanLG">{numBlocks}</span></div>
+                                <div><br></br></div>
+                                <div><span className="spanG"># How many treatments are we using?</span></div>
+                                <div>n_treatments &lt;- <span className="spanLG">{blockSize}</span></div>
+                            </HoverOverlay>
+                        </div>
 
-                        <div><span className="spanG"># In how many blocks will subjects be randomized?</span></div>
-                        <div>n_blocks &lt;- <span className="spanLG">{numBlocks}</span></div>
+
                         <div><br></br></div>
-                        <div><span className="spanG"># How many treatments are we using?</span></div>
-                        <div>n_treatments &lt;- <span className="spanLG">{blockSize}</span></div>
-                        <div><br></br></div>
-                        <div><span className="spanG"># Generate random orders of treatments</span></div>
-                        <div>treatment_blocks &lt;-</div>
-                        <div className="indent">sample<span className="spanY">(</span>n_treatments, n_treatments<span className="spanY">)</span> |&gt;</div>
-                        <div className="indent">replicate<span className="spanY">(</span>n = n_blocks<span className="spanY">)</span></div>
-                        <div><br></br></div>
-                        <div><span className="spanG"># Visualize the treatment orders</span></div>
-                        <div>treatment_colors &lt;- brewer.pal<span className="spanY">(</span>n_treatments, <span className="spanO">"Purples"</span><span className="spanY">)</span></div>
-                        <div>par<span className="spanY">(</span>xpd = <span className="spanB">TRUE</span>, mar = c<span className="spanP">(</span><span className="spanLG">5</span>, <span className="spanLG">4</span>, <span className="spanLG">4</span>, <span className="spanLG">11</span><span className="spanP">)</span><span className="spanY">)</span></div>
-                        <div>image<span className="spanY">(</span>treatment_blocks,</div>
-                        <div className="indent">col = treatment_colors,</div>
-                        <div className="indent">xlab = <span className="spanO">"Treatment Order"</span>, ylab = <span className="spanO">"Block"</span>,</div>
-                        <div className="indent">axes = <span className="spanB">FALSE</span><span className="spanY">)</span></div>
-                        <div>axis<span className="spanY">(</span><span className="spanLG">1</span>, at = seq<span className="spanP">(</span><span className="spanLG">0</span>, <span className="spanLG">1</span>, length.out = n_treatments<span className="spanP">)</span>, labels = seq<span className="spanP">(</span>n_treatments<span className="spanP">)</span><span className="spanY">)</span></div>
-                        <div>axis<span className="spanY">(</span><span className="spanLG">2</span>, at = seq<span className="spanP">(</span><span className="spanLG">0</span>, <span className="spanLG">1</span>, length.out = n_blocks<span className="spanP">)</span>, labels = seq<span className="spanP">(</span>n_blocks<span className="spanP">)</span><span className="spanY">)</span></div>
-                        <div>legend<span className="spanY">(</span><span className="spanLG">1</span> + <span className="spanLG">1.25</span> / n_treatments, <span className="spanLG">1</span>, title = <span className="spanO">"Treatments"</span>,</div>
-                        <div className="indent">legend = LETTERS<span className="spanP">[</span>seq<span className="spanLB">(</span>n_treatments<span className="spanLB">)</span><span className="spanP">]</span>, fill = treatment_colors<span className="spanY">)</span></div>
-                        <br></br>
+
+                        <div>
+                            <HoverOverlay overlayText="treatment_blocks <- sample(n_treatments, n_treatments) |> replicate(n = n_blocks): This line generates a random order of the 4 treatments, and then replicates this random order across 6 blocks.">
+                                <div><span className="spanG"># Generate random orders of treatments</span></div>
+                                <div>treatment_blocks &lt;-</div>
+                                <div className="indent">sample<span className="spanY">(</span>n_treatments, n_treatments<span className="spanY">)</span> |&gt;</div>
+                                <div className="indent">replicate<span className="spanY">(</span>n = n_blocks<span className="spanY">)</span></div>
+                            </HoverOverlay>
+                        </div>
+
+                        <div>
+                            <HoverOverlay overlayText="">
+                                <div><br></br></div>
+                                <div><span className="spanG"># Visualize the treatment orders</span></div>
+                                <div>treatment_colors &lt;- brewer.pal<span className="spanY">(</span>n_treatments, <span className="spanO">"Purples"</span><span className="spanY">)</span></div>
+                                <div>par<span className="spanY">(</span>xpd = <span className="spanB">TRUE</span>, mar = c<span className="spanP">(</span><span className="spanLG">5</span>, <span className="spanLG">4</span>, <span className="spanLG">4</span>, <span className="spanLG">11</span><span className="spanP">)</span><span className="spanY">)</span></div>
+                                <div>image<span className="spanY">(</span>treatment_blocks,</div>
+                                <div className="indent">col = treatment_colors,</div>
+                                <div className="indent">xlab = <span className="spanO">"Treatment Order"</span>, ylab = <span className="spanO">"Block"</span>,</div>
+                                <div className="indent">axes = <span className="spanB">FALSE</span><span className="spanY">)</span></div>
+                                <div>axis<span className="spanY">(</span><span className="spanLG">1</span>, at = seq<span className="spanP">(</span><span className="spanLG">0</span>, <span className="spanLG">1</span>, length.out = n_treatments<span className="spanP">)</span>, labels = seq<span className="spanP">(</span>n_treatments<span className="spanP">)</span><span className="spanY">)</span></div>
+                                <div>axis<span className="spanY">(</span><span className="spanLG">2</span>, at = seq<span className="spanP">(</span><span className="spanLG">0</span>, <span className="spanLG">1</span>, length.out = n_blocks<span className="spanP">)</span>, labels = seq<span className="spanP">(</span>n_blocks<span className="spanP">)</span><span className="spanY">)</span></div>
+                                <div>legend<span className="spanY">(</span><span className="spanLG">1</span> + <span className="spanLG">1.25</span> / n_treatments, <span className="spanLG">1</span>, title = <span className="spanO">"Treatments"</span>,</div>
+                                <div className="indent">legend = LETTERS<span className="spanP">[</span>seq<span className="spanLB">(</span>n_treatments<span className="spanLB">)</span><span className="spanP">]</span>, fill = treatment_colors<span className="spanY">)</span></div>
+                                <br></br>
+                            </HoverOverlay>
+                        </div>
                     </div>
                 </div>
 
@@ -166,6 +183,8 @@ export default function Randomize1() {
 
             </div >
             <div>
+                <br></br>
+                <br></br>
                 <br></br>
                 <br></br>
                 <input
