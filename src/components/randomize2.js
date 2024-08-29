@@ -11,7 +11,7 @@ export default function Randomize1() {
     const [randomization, setRandomization] = useState([])
 
     const submitContinueClick = () => {
-        navigate('/randomize2')
+        navigate('/')
     }
 
     const submitRunClick = () => {
