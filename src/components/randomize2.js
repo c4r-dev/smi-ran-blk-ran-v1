@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import HoverOverlay from "./hoverOverlay";
+
 export default function Randomize1() {
 
     const navigate = useNavigate()
@@ -113,22 +115,23 @@ export default function Randomize1() {
         <>
             <div className="top">
                 <h3>Stratified Randomization</h3>
-                <h2>Let's Visualize block randomization.</h2>
-                <h4>Block randomization is as simple as hitting a button!</h4>
-                <h4>Free software packages such as <i>blockrand, randomizR, or pspych in R</i> can
-                    randomize your study.</h4>
-                <h4>But what is happening under the hood?</h4>
-                <h4>    Hit "RUN" on this R code to see
-                    a visualization of a block randomized study with 4 treatments.
-                </h4>
             </div>
 
             <div className="container">
                 <div className="box">
                     <div className="code">
+
                         <div><br></br></div>
-                        <div>library<span className="spanY">(</span>RColorBrewer<span className="spanY">)</span></div>
+
+                        <div>
+                            <HoverOverlay overlayText="RColorBrewer is an R package that provides color palettes for use in R graphics.">
+                                <div>library<span className="spanY">(</span>RColorBrewer<span className="spanY">)</span></div>
+                            </HoverOverlay>
+                        </div>
+
                         <div><br></br></div>
+
+
                         <div><span className="spanG"># In how many blocks will subjects be randomized?</span></div>
                         <div>n_blocks &lt;- <span className="spanLG">{numBlocks}</span></div>
                         <div><br></br></div>
@@ -169,7 +172,7 @@ export default function Randomize1() {
                     type="button"
                     onClick={submitRunClick}
                     value="RUN" />
-                    <input
+                <input
                     type="button"
                     onClick={submitContinueClick}
                     value="CONTINUE ACTIVITY" />

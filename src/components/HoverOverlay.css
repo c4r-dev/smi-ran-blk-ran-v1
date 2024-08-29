@@ -1,0 +1,29 @@
+.hover-container {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #ccc; /* Optional, to see the boundaries of the div */
+  }
+  
+  .overlay-box {
+    position: absolute;
+    bottom: 100%; /* Position above the div */
+    left: 50%;
+    /* transform: translateX(-50%); */
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    text-indent: 40px;
+  }
+  
+  .hover-container:hover .overlay-box {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
