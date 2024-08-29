@@ -115,6 +115,7 @@ export default function Randomize1() {
         <>
             <div className="top">
                 <h3>Stratified Randomization</h3>
+                <h3>Stratified Randomization</h3>
             </div>
 
             <div className="container">
@@ -156,7 +157,7 @@ n_treatments <- 4: Defines that there are 4 different treatments to be applied."
                         </div>
 
                         <div>
-                            <HoverOverlay overlayText="">
+                            <HoverOverlay overlayText='treatment_colors <- brewer.pal(n_treatments, "Purples"): Creates a color palette with 4 different shades of purple, corresponding to the 4 treatments. par(xpd = TRUE, mar = c(5, 4, 4, 8)): Adjusts the plotting parameters to allow space for the legend and to make sure plotting is not clipped. image(treatment_blocks, col = treatment_colors, xlab = "Treatment Order", ylab = "Block", axes = FALSE): Creates an image plot where each block (column) shows the random order of treatments using the specified colors. axis(1, at = seq(0, 1, length.out = n_treatments), labels = seq(n_treatments)) and axis(2, at = seq(0, 1, length.out = n_blocks), labels = seq(n_blocks)): Add labeled axes for the treatments and blocks. legend(1 + 1.25 / n_treatments, 1, title = "Treatments", legend = LETTERS[seq(n_treatments)], fill = treatment_colors): Adds a legend to the plot, indicating which color corresponds to which treatment.'>
                                 <div><br></br></div>
                                 <div><span className="spanG"># Visualize the treatment orders</span></div>
                                 <div>treatment_colors &lt;- brewer.pal<span className="spanY">(</span>n_treatments, <span className="spanO">"Purples"</span><span className="spanY">)</span></div>
