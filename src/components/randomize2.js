@@ -115,7 +115,7 @@ export default function Randomize1() {
         <>
             <div className="top">
                 <h3>Stratified Randomization</h3>
-                <h3>Stratified Randomization</h3>
+                <h3>--</h3>
             </div>
 
             <div className="container">
