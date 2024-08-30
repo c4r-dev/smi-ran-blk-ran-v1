@@ -188,6 +188,9 @@ n_treatments <- 4: Defines that there are 4 different treatments to be applied."
                 <br></br>
                 <br></br>
                 <br></br>
+                <br></br>
+                <br></br>
+      
                 <input
                     type="button"
                     onClick={submitRunClick}
