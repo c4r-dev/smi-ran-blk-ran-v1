@@ -2,15 +2,17 @@
     position: relative;
     display: inline-block;
     padding: 10px;
-    border: 1px solid #ccc; /* Optional, to see the boundaries of the div */
+    /* border: 1px solid #ccc; */
   }
   
   .overlay-box {
     position: absolute;
     bottom: 100%; /* Position above the div */
     left: 10%; /* transform: translateX(-50%); */
-    background-color: #333;
-    color: #fff;
+    /* background-color: #333;
+    color: #fff; */
+    background-color: white;
+    color: black;
     padding: 8px;
     border-radius: 4px;
     /* white-space: nowrap; */
