@@ -156,16 +156,27 @@ n_treatments <- 4: Defines that there are 4 different treatments to be applied."
                             </HoverOverlay>
                         </div>
 
+                        <div><br></br></div>
                         <div>
-                            <HoverOverlay overlayText='treatment_colors <- brewer.pal(n_treatments, "Purples"): Creates a color palette with 4 different shades of purple, corresponding to the 4 treatments. par(xpd = TRUE, mar = c(5, 4, 4, 8)): Adjusts the plotting parameters to allow space for the legend and to make sure plotting is not clipped. image(treatment_blocks, col = treatment_colors, xlab = "Treatment Order", ylab = "Block", axes = FALSE): Creates an image plot where each block (column) shows the random order of treatments using the specified colors. axis(1, at = seq(0, 1, length.out = n_treatments), labels = seq(n_treatments)) and axis(2, at = seq(0, 1, length.out = n_blocks), labels = seq(n_blocks)): Add labeled axes for the treatments and blocks. legend(1 + 1.25 / n_treatments, 1, title = "Treatments", legend = LETTERS[seq(n_treatments)], fill = treatment_colors): Adds a legend to the plot, indicating which color corresponds to which treatment.'>
-                                <div><br></br></div>
+
+                            <HoverOverlay overlayText='treatment_colors <- brewer.pal(n_treatments, "Purples"): Creates a color palette with 4 different shades of purple, corresponding to the 4 treatments.'>
                                 <div><span className="spanG"># Visualize the treatment orders</span></div>
                                 <div>treatment_colors &lt;- brewer.pal<span className="spanY">(</span>n_treatments, <span className="spanO">"Purples"</span><span className="spanY">)</span></div>
+                            </HoverOverlay>
+
+                            <HoverOverlay overlayText='par(xpd = TRUE, mar = c(5, 4, 4, 8)): Adjusts the plotting parameters to allow space for the legend and to make sure plotting is not clipped.'>
                                 <div>par<span className="spanY">(</span>xpd = <span className="spanB">TRUE</span>, mar = c<span className="spanP">(</span><span className="spanLG">5</span>, <span className="spanLG">4</span>, <span className="spanLG">4</span>, <span className="spanLG">11</span><span className="spanP">)</span><span className="spanY">)</span></div>
+                            </HoverOverlay>
+
+                            <HoverOverlay overlayText='image(treatment_blocks, col = treatment_colors, xlab = "Treatment Order", ylab = "Block", axes = FALSE): Creates an image plot where each block (column) shows the random order of treatments using the specified colors.'>
                                 <div>image<span className="spanY">(</span>treatment_blocks,</div>
                                 <div className="indent">col = treatment_colors,</div>
                                 <div className="indent">xlab = <span className="spanO">"Treatment Order"</span>, ylab = <span className="spanO">"Block"</span>,</div>
                                 <div className="indent">axes = <span className="spanB">FALSE</span><span className="spanY">)</span></div>
+                            </HoverOverlay>
+
+
+                            <HoverOverlay overlayText='axis(1, at = seq(0, 1, length.out = n_treatments), labels = seq(n_treatments)) and axis(2, at = seq(0, 1, length.out = n_blocks), labels = seq(n_blocks)): Add labeled axes for the treatments and blocks. legend(1 + 1.25 / n_treatments, 1, title = "Treatments", legend = LETTERS[seq(n_treatments)], fill = treatment_colors): Adds a legend to the plot, indicating which color corresponds to which treatment.'>
                                 <div>axis<span className="spanY">(</span><span className="spanLG">1</span>, at = seq<span className="spanP">(</span><span className="spanLG">0</span>, <span className="spanLG">1</span>, length.out = n_treatments<span className="spanP">)</span>, labels = seq<span className="spanP">(</span>n_treatments<span className="spanP">)</span><span className="spanY">)</span></div>
                                 <div>axis<span className="spanY">(</span><span className="spanLG">2</span>, at = seq<span className="spanP">(</span><span className="spanLG">0</span>, <span className="spanLG">1</span>, length.out = n_blocks<span className="spanP">)</span>, labels = seq<span className="spanP">(</span>n_blocks<span className="spanP">)</span><span className="spanY">)</span></div>
                                 <div>legend<span className="spanY">(</span><span className="spanLG">1</span> + <span className="spanLG">1.25</span> / n_treatments, <span className="spanLG">1</span>, title = <span className="spanO">"Treatments"</span>,</div>
@@ -184,13 +195,13 @@ n_treatments <- 4: Defines that there are 4 different treatments to be applied."
 
             </div >
             <div>
+                <br></br> <div><br></br></div>
+                <br></br> <div><br></br></div>
                 <br></br>
                 <br></br>
                 <br></br>
                 <br></br>
-                <br></br>
-                <br></br>
-      
+
                 <input
                     type="button"
                     onClick={submitRunClick}
