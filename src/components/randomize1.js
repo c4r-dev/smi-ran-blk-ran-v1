@@ -113,10 +113,10 @@ export default function Randomize1() {
         <>
             <div className="top">
                 <h3>Stratified Randomization</h3>
-                <h2>Let's Visualize block randomization.</h2>
+                <h2>Let's Visualize Block Randomization.</h2>
                 <h4>Block randomization is as simple as hitting a button! Free software packages such as <i>blockrand, randomizR, or pspych in R</i> can
                     randomize your study.</h4>
-                <h4>But what is happening under the hood? Hit "RUN" on this R code to see
+                <h4>But what is happening under the hood? Click "RUN CODE" on this R code to see
                     a visualization of a block randomized study with 4 treatments.
                 </h4>
             </div>
@@ -164,10 +164,12 @@ export default function Randomize1() {
                 <br></br>
                 <br></br>
                 <input
+                    className="button"
                     type="button"
                     onClick={submitRunClick}
-                    value="RUN" />
-                    <input
+                    value="RUN CODE" />
+                <input
+                    className="button"
                     type="button"
                     onClick={submitContinueClick}
                     value="CONTINUE ACTIVITY" />

@@ -14,7 +14,7 @@ export default function Randomize1() {
     const [randomization, setRandomization] = useState([])
 
     const submitContinueClick = () => {
-        navigate('/')
+        navigate('/finalpage')
     }
 
     const handleBlocksChange = (e) => {
@@ -126,8 +126,8 @@ export default function Randomize1() {
         <>
             <div className="top">
                 <h3>Stratified Randomization</h3>
-                <h3>hover over the code for an explanation</h3>
-                <h3>change n_blocks or n_treatments, click RUN to show boxes</h3>
+                <h3>Hover over the code for a detailed description.</h3>
+                <h3>Change n_blocks, and click "RUN CODE" to view Block Randomization.</h3>
             </div>
 
             <div className="container">
@@ -215,10 +215,12 @@ n_treatments <- 4: Defines that there are 4 different treatments to be applied."
 
                 <input
                     type="button"
+                     className="button"
                     onClick={submitRunClick}
-                    value="RUN" />
+                    value="RUN CODE" />
                 <input
                     type="button"
+                     className="button"
                     onClick={submitContinueClick}
                     value="CONTINUE ACTIVITY" />
                 <br></br>

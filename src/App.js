@@ -4,6 +4,7 @@ import './App.css';
 
 import Randomize1 from './components/randomize1';
 import Randomize2 from './components/randomize2';
+import FinalPage from './components/finalPage';
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Randomize1 />} />
           <Route path="/randomize2" element={<Randomize2 />} />
+          <Route path="/finalpage" element={<FinalPage />} />
           </Routes>
       </BrowserRouter>
     </>
