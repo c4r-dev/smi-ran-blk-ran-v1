@@ -22,8 +22,8 @@ export default function Randomize1() {
 
     const submitRunClick = () => {
 
-        if (numBlocks < 1 || numBlocks > 8) {
-            alert('n_blocks must be > 0 and < 8')
+        if (numBlocks < 3 || numBlocks > 8) {
+            alert('n_blocks must be > 2 and < 9')
         } else {
 
 
@@ -148,7 +148,7 @@ export default function Randomize1() {
                                 <HoverOverlay overlayText="n_blocks <- 6: Defines that there are 6 blocks in the experiment.
 n_treatments <- 4: Defines that there are 4 different treatments to be applied.">
                                     <div><span className="spanG"># In how many blocks will subjects be randomized?</span></div>
-                                    <div>n_blocks &lt;- <span className="spanLG"><input type="text" value={numBlocks} onChange={handleBlocksChange} /></span></div>
+                                    <div>n_blocks &lt;- <span className="spanLG"><input type="text" value={numBlocks} onChange={handleBlocksChange} className="custom-input" /></span></div>
                                     <div><br></br></div>
                                     <div><span className="spanG"># How many treatments are we using?</span></div>
                                     <div>n_treatments &lt;- <span className="spanLG">{blockSize}</span></div>
