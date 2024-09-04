@@ -186,3 +186,18 @@
 .button {
     margin-left: 20px;
 }
+
+.finalPage {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background-image: url('assets/confetti-full.svg'); /* Path to your SVG file */
+    background-size: cover; /* Scale the background to cover the container */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    background-position: center; /* Center the background image */
+  }
+
+  .finalPageCenter {
+    color: black;
+    text-align: center;
+    font-family: Menlo, Monaco, 'Courier New', monospace;
+  }
