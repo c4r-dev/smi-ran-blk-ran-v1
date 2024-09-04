@@ -9,7 +9,8 @@ export default function Randomize1() {
     const navigate = useNavigate()
 
     const [numBlocks, setNumBlocks] = useState(6);
-    const [blockSize, setBlockSize] = useState(4);
+    // const [blockSize, setBlockSize] = useState(4);
+    const blockSize = 4
     const [randomization, setRandomization] = useState([])
 
     const submitContinueClick = () => {
