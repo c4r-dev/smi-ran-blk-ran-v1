@@ -116,6 +116,7 @@ export default function Randomize1() {
             <div className="top">
                 <h3>Stratified Randomization</h3>
                 <h3>hover over the code for an explanation</h3>
+                <h3>change n_blocks or n_treatments</h3>
             </div>
 
             <div className="container">
@@ -123,7 +124,7 @@ export default function Randomize1() {
                 <div className="box">
                     <div className="code">
 
-                        <div><br></br></div>
+                        {/* <div><br></br></div> */}
 
                         <div>
                             <HoverOverlay overlayText="RColorBrewer is an R package that provides color palettes for use in R graphics.">
@@ -131,7 +132,7 @@ export default function Randomize1() {
                             </HoverOverlay>
                         </div>
 
-                        <div><br></br></div>
+                        {/* <div><br></br></div> */}
 
                         <div>
                             <HoverOverlay overlayText="n_blocks <- 6: Defines that there are 6 blocks in the experiment.
@@ -145,7 +146,7 @@ n_treatments <- 4: Defines that there are 4 different treatments to be applied."
                         </div>
 
 
-                        <div><br></br></div>
+                        {/* <div><br></br></div> */}
 
                         <div>
                             <HoverOverlay overlayText="treatment_blocks <- sample(n_treatments, n_treatments) |> replicate(n = n_blocks): This line generates a random order of the 4 treatments, and then replicates this random order across 6 blocks.">
@@ -156,7 +157,7 @@ n_treatments <- 4: Defines that there are 4 different treatments to be applied."
                             </HoverOverlay>
                         </div>
 
-                        <div><br></br></div>
+                        {/* <div><br></br></div> */}
                         <div>
 
                             <HoverOverlay overlayText='treatment_colors <- brewer.pal(n_treatments, "Purples"): Creates a color palette with 4 different shades of purple, corresponding to the 4 treatments.'>
@@ -188,7 +189,7 @@ n_treatments <- 4: Defines that there are 4 different treatments to be applied."
                 </div>
 
                 <div className="box">
-                    <div className="block-chart">
+                    <div className="block-chart2">
                         {randomization.map(item => arrayOutput(item))}
                     </div>
                 </div>
@@ -197,8 +198,6 @@ n_treatments <- 4: Defines that there are 4 different treatments to be applied."
             <div>
                 <br></br> <div><br></br></div>
                 <br></br> <div><br></br></div>
-                <br></br>
-                <br></br>
                 <br></br>
                 <br></br>
 

@@ -154,7 +154,7 @@ export default function Randomize1() {
                 </div>
 
                 <div className="box">
-                    <div className="block-chart">
+                    <div className="block-chart2">
                         {randomization.map(item => arrayOutput(item))}
                     </div>
                 </div>

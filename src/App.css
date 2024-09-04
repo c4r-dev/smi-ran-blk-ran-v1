@@ -171,7 +171,7 @@
     font-size: 1.7em;
 }
 
-.block-chart {
+.block-chart2 {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(9, 1fr); 
