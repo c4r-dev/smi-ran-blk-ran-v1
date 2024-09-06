@@ -14,7 +14,7 @@ export default function App() {
           <Route path="/" element={<Randomize1 />} />
           <Route path="/randomize2" element={<Randomize2 />} />
           <Route path="/finalpage" element={<FinalPage />} />
-          </Routes>
+        </Routes>
       </BrowserRouter>
     </>
   );
