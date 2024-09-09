@@ -204,10 +204,15 @@ export default function Randomize1() {
                     <div className="block-chart2">
                         {randomization.map(item => arrayOutput(item))}
                     </div>
+
+                    {randomization.length > 0 && 
+                        <div className="legend-container">
+                            <Legend />
+                        </div>
+                    }
                 </div>
 
-                {randomization.length > 0 && <Legend />}
-                
+
             </div >
             <div>
                 <br></br> <div><br></br></div>
