@@ -26,6 +26,7 @@ export default function Randomize1() {
 
         if (numBlocks < 3 || numBlocks > 8) {
             alert('n_blocks must be > 2 and < 9')
+            setNumBlocks(6)
         } else {
 
 
@@ -232,6 +233,7 @@ export default function Randomize1() {
             <div>
                 <br></br> <div><br></br></div>
                 <br></br> <div><br></br></div>
+                <br></br>
                 <br></br>
                 <br></br>
                 <br></br>
