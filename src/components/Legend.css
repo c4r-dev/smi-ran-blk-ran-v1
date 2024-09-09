@@ -1,0 +1,48 @@
+
+h1 {
+    font-size: 1.2rem;
+    /* font-weight: 600; */
+    margin: 6px;
+}
+
+p {
+    margin: 6px;
+    /* font-size: 1rem; */
+    /* font-weight: 400; */
+}
+
+
+.legend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: flex-start; */
+    /* justify-content: center; */
+    /* height: 100vh; */
+    width: 120px;
+    border: 1px solid black;
+    gap: 3px;
+}
+
+.label {
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.color-box {
+    /* width: 20px;
+    height: 20px; */
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+}
+
+

@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Legend from "./Legend";
 
 export default function Randomize1() {
 
@@ -112,6 +113,7 @@ export default function Randomize1() {
 
         <>
             <div className="top">
+                <Legend />
                 <h3>Stratified Randomization</h3>
                 <h2>Let's Visualize Block Randomization.</h2>
                 <h4>Block randomization is as simple as hitting a button! Free software packages such as <i>blockrand, randomizR, or pspych in R</i> can
