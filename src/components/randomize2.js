@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import HoverOverlay from "./hoverOverlay";
-
+import Legend from "./Legend";
 export default function Randomize1() {
 
     const navigate = useNavigate()
@@ -147,7 +147,7 @@ export default function Randomize1() {
 
                             <div>
                                 <HoverOverlay overlayText="n_blocks <- 6: Defines that there are 6 blocks in the experiment.
-n_treatments <- 4: Defines that there are 4 different treatments to be applied.">
+                                    n_treatments <- 4: Defines that there are 4 different treatments to be applied.">
                                     <div><span className="spanG"># In how many blocks will subjects be randomized?</span></div>
                                     <div>n_blocks &lt;- <span className="spanLG"><input type="text" value={numBlocks} onChange={handleBlocksChange} className="custom-input" /></span></div>
                                     <div><br></br></div>
@@ -206,6 +206,8 @@ n_treatments <- 4: Defines that there are 4 different treatments to be applied."
                     </div>
                 </div>
 
+                {randomization.length > 0 && <Legend />}
+                
             </div >
             <div>
                 <br></br> <div><br></br></div>

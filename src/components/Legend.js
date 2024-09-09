@@ -2,9 +2,8 @@ import './Legend.css';
 
 export default function Legend() {
 
-
     return (
-        <div className="legend">
+        <div className="legend-frame">
             <h1>Treatments</h1>
 
             <div className="label">
@@ -23,7 +22,6 @@ export default function Legend() {
                 <div className="color-box block4"></div>
                 <p>D</p>
             </div>
-
         </div>
     );
 }

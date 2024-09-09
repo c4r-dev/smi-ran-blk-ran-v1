@@ -113,7 +113,6 @@ export default function Randomize1() {
 
         <>
             <div className="top">
-                <Legend />
                 <h3>Stratified Randomization</h3>
                 <h2>Let's Visualize Block Randomization.</h2>
                 <h4>Block randomization is as simple as hitting a button! Free software packages such as <i>blockrand, randomizR, or pspych in R</i> can
@@ -160,6 +159,8 @@ export default function Randomize1() {
                         {randomization.map(item => arrayOutput(item))}
                     </div>
                 </div>
+
+                {randomization.length > 0 && <Legend />}
 
             </div >
             <div>
