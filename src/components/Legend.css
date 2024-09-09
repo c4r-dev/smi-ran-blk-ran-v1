@@ -7,7 +7,6 @@ h1 {
 }
 
 p {
-
     font-family: sans-serif, Menlo, Monaco, 'Courier New', monospace;
     margin: 6px;
 }
@@ -21,6 +20,8 @@ p {
     gap: 3px;
     justify-self: flex-start;
     margin-top: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .label {
