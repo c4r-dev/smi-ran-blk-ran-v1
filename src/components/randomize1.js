@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Legend from "./Legend";
 
 export default function Randomize1() {
 
@@ -158,6 +159,8 @@ export default function Randomize1() {
                         {randomization.map(item => arrayOutput(item))}
                     </div>
                 </div>
+
+                {randomization.length > 0 && <Legend />}
 
             </div >
             <div>
