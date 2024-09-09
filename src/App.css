@@ -103,7 +103,7 @@
 }
 
 .block1 {
-    background-color: purple;
+    background-color: black;
     border: 1px solid #333;  
     display: flex;
     justify-content: center;
@@ -113,7 +113,7 @@
 }
 
 .block2 {
-    background-color: rgb(232, 156, 232);
+    background-color: rgb(221, 221, 162);
     border: 1px solid #333;  
     display: flex;
     justify-content: center;

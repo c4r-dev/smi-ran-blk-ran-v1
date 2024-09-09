@@ -92,9 +92,9 @@ export default function Randomize1() {
         } else if (item === 'purple2') {
             return (<div className="block2"></div>)
         } else if (item === 'purple3') {
-            return (<div className="block3"></div>)
+            return (<div className="block1"></div>)
         } else if (item === 'purple4') {
-            return (<div className="block4"></div>)
+            return (<div className="block2"></div>)
         } else if (item === 'Block') {
             return (<div className="block">{item}</div>)
         } else if (item === 'Treatment') {
