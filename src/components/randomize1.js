@@ -61,7 +61,7 @@ export default function Randomize1() {
             outArray.push(' ')
             for (let k = 1; k <= blockSize; k++) {
                 if (k === 2) {
-                    outArray.push('Treatment')
+                    outArray.push('Subject')
                 } else if (k === 3) {
                     outArray.push('Order')
                 } else {
@@ -97,7 +97,7 @@ export default function Randomize1() {
             return (<div className="block2"></div>)
         } else if (item === 'Block') {
             return (<div className="block">{item}</div>)
-        } else if (item === 'Treatment') {
+        } else if (item === 'Subject') {
             return (<div className="treatment">{item}</div>)
         } else if (item === 'Order') {
             return (<div className="order"> {item}</div>)
@@ -114,7 +114,6 @@ export default function Randomize1() {
 
         <>
             <div className="top">
-                <h3>Stratified Randomization</h3>
                 <h2>Let's Visualize Block Randomization.</h2>
                 <h4>Block randomization is as simple as hitting a button! Free software packages such as <i>blockrand, randomizR, or pspych in R</i> can
                     randomize your study.</h4>

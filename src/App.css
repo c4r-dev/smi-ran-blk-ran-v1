@@ -74,7 +74,7 @@
     background-color: white;
     font-family: sans-serif, Menlo, Monaco, 'Courier New', monospace;
     display: flex;
-    justify-content: left;
+    justify-content: right;
     align-items: center;
     text-indent: 5px;
     color: black;
@@ -113,7 +113,7 @@
 }
 
 .block2 {
-    background-color: rgb(221, 221, 162);
+    background-color: rgb(235, 235, 152);
     border: 1px solid #333;  
     display: flex;
     justify-content: center;
