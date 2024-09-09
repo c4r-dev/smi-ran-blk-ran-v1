@@ -72,7 +72,7 @@ export default function Randomize1() {
                 outArray.push(' ')
                 for (let k = 1; k <= blockSize; k++) {
                     if (k === 2) {
-                        outArray.push('Treatment')
+                        outArray.push('Subject')
                     } else if (k === 3) {
                         outArray.push('Order')
                     } else {
@@ -104,12 +104,12 @@ export default function Randomize1() {
         } else if (item === 'purple2') {
             return (<div className="block2"></div>)
         } else if (item === 'purple3') {
-            return (<div className="block3"></div>)
+            return (<div className="block1"></div>)
         } else if (item === 'purple4') {
-            return (<div className="block4"></div>)
+            return (<div className="block2"></div>)
         } else if (item === 'Block') {
             return (<div className="block">{item}</div>)
-        } else if (item === 'Treatment') {
+        } else if (item === 'Subject') {
             return (<div className="treatment">{item}</div>)
         } else if (item === 'Order') {
             return (<div className="order"> {item}</div>)
@@ -126,7 +126,6 @@ export default function Randomize1() {
 
         <>
             <div className="top">
-                <h3>Stratified Randomization</h3>
                 <h3>Hover over the code for a detailed description.</h3>
                 <h3>Change n_blocks, and click "RUN CODE" to view Block Randomization.</h3>
             </div>
@@ -156,9 +155,12 @@ export default function Randomize1() {
                                     <div>n_blocks &lt;- <span className="spanLG"><input type="text" value={numBlocks} onChange={handleBlocksChange} className="custom-input" /></span></div>
                                     <div><br></br></div>
                                     <div><span className="spanG"># How many treatments are we using?</span></div>
-                                    <div>n_treatments &lt;- <span className="spanLG">{blockSize}</span></div>
-                                    <div><span className="spanG"># What is the block size?</span></div>
-                                    <div>n_treatments &lt;- <span className="spanLG">{blockSize}</span></div>
+                                    <div>n_treatments &lt;- <span className="spanLG">{numTreatments}</span></div>
+                                    <div><br></br></div>
+                                    <div><span className="spanG"># What is the block size? (It must be a multiple of number of treatments.)</span></div>
+                                    <div>block_size &lt;- <span className="spanLG">{blockSize}</span></div>
+                                    <div>stopifnot<span className="spanY">(</span>block_size %% n_treatments == 0<span className="spanY">)</span></div>
+
                                 </HoverOverlay>
                             </div>
 
@@ -166,10 +168,16 @@ export default function Randomize1() {
                             {/* <div><br></br></div> */}
 
                             <div>
-                                <HoverOverlay overlayText="treatment_blocks <- sample(n_treatments, n_treatments) |> replicate(n = n_blocks): This line generates a random order of the 4 treatments, and then replicates this random order across 6 blocks.">
+                                <HoverOverlay overlayText="rep(seq(n_treatments), block_size %/% n_treatments):
+                                    This generates a sequence of treatment labels (from 1 to n_treatments), repeated to fill the block size. 
+                                    The operator block_size %/% n_treatments determines how many times the sequence needs to repeat in each block.
+                                    sample(treatments_in_block): This shuffles the treatments within each block, randomizing the order of treatments.
+                                    replicate(n = n_blocks): This replicates the randomized treatment blocks for the number of blocks in the study.">
                                     <div><span className="spanG"># Generate random orders of treatments</span></div>
-                                    <div>treatment_blocks &lt;-</div>
-                                    <div className="indent">sample<span className="spanY">(</span>n_treatments, n_treatments<span className="spanY">)</span> |&gt;</div>
+                                    <div>treatments_in_block &lt;- rep<span className="spanY">(</span>seq<span className="spanP">(</span>n_treatments<span className="spanP">)</span>,</div>
+                                    <div className="indentLarge">block_size %/% n_treatments<span className="spanY">)</span></div>
+                                    <div>study_blocks &lt;-</div>
+                                    <div className="indent">sample<span className="spanY">(</span>treatments_in_block<span className="spanY">)</span> |&gt;</div>
                                     <div className="indent">replicate<span className="spanY">(</span>n = n_blocks<span className="spanY">)</span></div>
                                 </HoverOverlay>
                             </div>
@@ -177,27 +185,28 @@ export default function Randomize1() {
                             {/* <div><br></br></div> */}
                             <div>
 
-                                <HoverOverlay overlayText='treatment_colors <- brewer.pal(n_treatments, "Purples"): Creates a color palette with 4 different shades of purple, corresponding to the 4 treatments.'>
+                                <HoverOverlay overlayText='The line treatment_colors <- inferno(n_treatments) suggests you are using the Inferno color palette, which is available in libraries such as viridis (for R), typically used for color maps that work well for visualizations. The n_treatments parameter implies you are generating a specific number of colors based on the number of treatments in your experiment.'>
                                     <div><span className="spanG"># Visualize the treatment orders</span></div>
-                                    <div>treatment_colors &lt;- brewer.pal<span className="spanY">(</span>n_treatments, <span className="spanO">"Purples"</span><span className="spanY">)</span></div>
+                                    <div>treatment_colors &lt;- inferno<span className="spanY">(</span>n_treatments<span className="spanO"></span><span className="spanY">)</span></div>
                                 </HoverOverlay>
 
-                                <HoverOverlay overlayText='par(xpd = TRUE, mar = c(5, 4, 4, 8)): Adjusts the plotting parameters to allow space for the legend and to make sure plotting is not clipped.'>
+                                <HoverOverlay overlayText='par(xpd = TRUE, mar = c(5, 4, 4, 11)): Adjusts the plotting parameters to allow space for the legend and to make sure plotting is not clipped.'>
                                     <div>par<span className="spanY">(</span>xpd = <span className="spanB">TRUE</span>, mar = c<span className="spanP">(</span><span className="spanLG">5</span>, <span className="spanLG">4</span>, <span className="spanLG">4</span>, <span className="spanLG">11</span><span className="spanP">)</span><span className="spanY">)</span></div>
                                 </HoverOverlay>
 
-                                <HoverOverlay overlayText='image(treatment_blocks, col = treatment_colors, xlab = "Treatment Order", ylab = "Block", axes = FALSE): Creates an image plot where each block (column) shows the random order of treatments using the specified colors.'>
-                                    <div>image<span className="spanY">(</span>treatment_blocks,</div>
+                                <HoverOverlay overlayText='image(study_blocks, col = treatment_colors, xlab = "Subject Order", ylab = "Block", axes = FALSE): Creates an image plot where each block (column) shows the random order of treatments using the specified colors.'>
+                                    <div>image<span className="spanY">(</span>study_blocks,</div>
                                     <div className="indent">col = treatment_colors,</div>
-                                    <div className="indent">xlab = <span className="spanO">"Treatment Order"</span>, ylab = <span className="spanO">"Block"</span>,</div>
+                                    <div className="indent">xlab = <span className="spanO">"Subject Order"</span>, ylab = <span className="spanO">"Block"</span>,</div>
                                     <div className="indent">axes = <span className="spanB">FALSE</span><span className="spanY">)</span></div>
                                 </HoverOverlay>
 
 
                                 <HoverOverlay overlayText='axis(1, at = seq(0, 1, length.out = n_treatments), labels = seq(n_treatments)) and axis(2, at = seq(0, 1, length.out = n_blocks), labels = seq(n_blocks)): Add labeled axes for the treatments and blocks. legend(1 + 1.25 / n_treatments, 1, title = "Treatments", legend = LETTERS[seq(n_treatments)], fill = treatment_colors): Adds a legend to the plot, indicating which color corresponds to which treatment.'>
-                                    <div>axis<span className="spanY">(</span><span className="spanLG">1</span>, at = seq<span className="spanP">(</span><span className="spanLG">0</span>, <span className="spanLG">1</span>, length.out = n_treatments<span className="spanP">)</span>, labels = seq<span className="spanP">(</span>n_treatments<span className="spanP">)</span><span className="spanY">)</span></div>
+                                    <div>axis<span className="spanY">(</span><span className="spanLG">1</span>, at = seq<span className="spanP">(</span><span className="spanLG">0</span>, <span className="spanLG">1</span>, length.out = block_size<span className="spanP">)</span>, labels = seq<span className="spanP">(</span>block_size<span className="spanP">)</span><span className="spanY">)</span></div>
                                     <div>axis<span className="spanY">(</span><span className="spanLG">2</span>, at = seq<span className="spanP">(</span><span className="spanLG">0</span>, <span className="spanLG">1</span>, length.out = n_blocks<span className="spanP">)</span>, labels = seq<span className="spanP">(</span>n_blocks<span className="spanP">)</span><span className="spanY">)</span></div>
-                                    <div>legend<span className="spanY">(</span><span className="spanLG">1</span> + <span className="spanLG">1.25</span> / n_treatments, <span className="spanLG">1</span>, title = <span className="spanO">"Treatments"</span>,</div>
+
+                                    <div>legend<span className="spanY">(</span><span className="spanLG">1</span> + <span className="spanLG">1.25</span> / block_size, <span className="spanLG">1</span>, title = <span className="spanO">"Treatments"</span>,</div>
                                     <div className="indent">legend = LETTERS<span className="spanP">[</span>seq<span className="spanLB">(</span>n_treatments<span className="spanLB">)</span><span className="spanP">]</span>, fill = treatment_colors<span className="spanY">)</span></div>
                                     <br></br>
                                 </HoverOverlay>
@@ -211,7 +220,7 @@ export default function Randomize1() {
                         {randomization.map(item => arrayOutput(item))}
                     </div>
 
-                    {randomization.length > 0 && 
+                    {randomization.length > 0 &&
                         <div className="legend-container">
                             <Legend />
                         </div>
@@ -225,15 +234,19 @@ export default function Randomize1() {
                 <br></br> <div><br></br></div>
                 <br></br>
                 <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
 
                 <input
                     type="button"
-                     className="button"
+                    className="button"
                     onClick={submitRunClick}
                     value="RUN CODE" />
                 <input
                     type="button"
-                     className="button"
+                    className="button"
                     onClick={submitContinueClick}
                     value="CONTINUE ACTIVITY" />
                 <br></br>
