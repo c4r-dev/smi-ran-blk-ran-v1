@@ -11,6 +11,7 @@ export default function Randomize1() {
     const [numBlocks, setNumBlocks] = useState(6);
     // const [blockSize, setBlockSize] = useState(4);
     const blockSize = 4
+    const numTreatments = 2
     const [randomization, setRandomization] = useState([])
 
     const submitContinueClick = () => {
@@ -138,8 +139,8 @@ export default function Randomize1() {
                         <form onClick={submitRunClick}>
 
                             <div>
-                                <HoverOverlay overlayText="RColorBrewer is an R package that provides color palettes for use in R graphics.">
-                                    <div>library<span className="spanY">(</span>RColorBrewer<span className="spanY">)</span></div>
+                                <HoverOverlay overlayText="viridisLite is an R package that provides color palettes for use in R graphics.">
+                                    <div>library<span className="spanY">(</span>viridisLite<span className="spanY">)</span></div>
                                 </HoverOverlay>
                             </div>
 
@@ -147,11 +148,16 @@ export default function Randomize1() {
 
                             <div>
                                 <HoverOverlay overlayText="n_blocks <- 6: Defines that there are 6 blocks in the experiment.
-                                    n_treatments <- 4: Defines that there are 4 different treatments to be applied.">
+                                    n_treatments <- 2: Defines that there are 2 different treatments to be applied. 
+                                    block_size <- 4 must be a multiple of the number of treatments. 
+                                    stopifnot(block_size %% n-treatments == 0) uses modulus arithmatic to be sure is a multiple
+                                    of the number of treatments.">
                                     <div><span className="spanG"># In how many blocks will subjects be randomized?</span></div>
                                     <div>n_blocks &lt;- <span className="spanLG"><input type="text" value={numBlocks} onChange={handleBlocksChange} className="custom-input" /></span></div>
                                     <div><br></br></div>
                                     <div><span className="spanG"># How many treatments are we using?</span></div>
+                                    <div>n_treatments &lt;- <span className="spanLG">{blockSize}</span></div>
+                                    <div><span className="spanG"># What is the block size?</span></div>
                                     <div>n_treatments &lt;- <span className="spanLG">{blockSize}</span></div>
                                 </HoverOverlay>
                             </div>
