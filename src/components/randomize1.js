@@ -6,8 +6,8 @@ import Legend from "./Legend";
 export default function Randomize1() {
     const navigate = useNavigate();
 
-    let numBlocks = 6;
-    let blockSize = 4;
+    let numBlocks = 2;
+    let blockSize = 10;
     let numTreatments = 2;
     const [randomization, setRandomization] = useState([]);
 
@@ -207,7 +207,9 @@ export default function Randomize1() {
                             replicate<span className="spanY">(</span>n =
                             n_blocks<span className="spanY">)</span>
                         </div>
-
+                        <div className="indent">
+                            t<span className="spanY">()</span>
+                        </div>
                         <div>
                             <br></br>
                         </div>
@@ -224,7 +226,7 @@ export default function Randomize1() {
                         </div>
                         <div>
                             par<span className="spanY">(</span>xpd ={" "}
-                            <span className="spanB">TRUE</span>, mar = c
+                            <span className="spanB">FALSE</span>, mar = c
                             <span className="spanP">(</span>
                             <span className="spanLG">5</span>,{" "}
                             <span className="spanLG">4</span>,{" "}
@@ -239,8 +241,7 @@ export default function Randomize1() {
                         <div className="indent">col = treatment_colors,</div>
                         <div className="indent">
                             xlab ={" "}
-                            <span className="spanO">"Subject Order"</span>, ylab
-                            = <span className="spanO">"Block"</span>,
+                            <span className="spanO">"Block"</span>, 
                         </div>
                         <div className="indent">
                             axes = <span className="spanB">FALSE</span>
@@ -253,17 +254,6 @@ export default function Randomize1() {
                             <span className="spanP">(</span>
                             <span className="spanLG">0</span>,{" "}
                             <span className="spanLG">1</span>, length.out =
-                            block_size<span className="spanP">)</span>, labels =
-                            seq<span className="spanP">(</span>block_size
-                            <span className="spanP">)</span>
-                            <span className="spanY">)</span>
-                        </div>
-                        <div>
-                            axis<span className="spanY">(</span>
-                            <span className="spanLG">2</span>, at = seq
-                            <span className="spanP">(</span>
-                            <span className="spanLG">0</span>,{" "}
-                            <span className="spanLG">1</span>, length.out =
                             n_blocks<span className="spanP">)</span>, labels =
                             seq<span className="spanP">(</span>n_blocks
                             <span className="spanP">)</span>
@@ -271,17 +261,31 @@ export default function Randomize1() {
                         </div>
 
                         <div>
+                            grid<span className="spanY">(</span>
+                            nx = n_blocks, ny = block_size, col = "red", lty =
+                            <span className="spanLG"> 1</span>, lwd =
+                            <span className="spanLG"> 1</span>
+                            <span className="spanY">)</span>
+                        </div>
+
+                        <div>
+                            par<span className="spanY">(</span>xpd ={" "}
+                            <span className="spanB">TRUE</span>
+                            <span className="spanY">)</span>
+                        </div>
+
+                        <div>
                             legend<span className="spanY">(</span>
                             <span className="spanLG">1</span> +{" "}
-                            <span className="spanLG">1.25</span> / block_size,{" "}
-                            <span className="spanLG">1</span>, title ={" "}
-                            <span className="spanO">"Treatments"</span>,
+                            <span className="spanLG">1.25</span> / n_blocks,{" "}
+                            <span className="spanLG">1</span>,
                         </div>
+
                         <div className="indent">
-                            legend = LETTERS<span className="spanP">[</span>seq
-                            <span className="spanLB">(</span>n_treatments
-                            <span className="spanLB">)</span>
-                            <span className="spanP">]</span>, fill =
+                            legend = c<span className="spanP">(</span>
+                            <span className="spanO">"Treatment"</span>,
+                            <span className="spanO"> "Control"</span>
+                            <span className="spanP">)</span>, fill =
                             treatment_colors<span className="spanY">)</span>
                         </div>
 
