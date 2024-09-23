@@ -34,34 +34,38 @@ export default function Randomize1() {
 
             // console.log(blockRandomization)
 
-            let outArray = [" ", " ", " ", "Treatme", "nts", " "];
+            // let outArray = [" ", " ", " ", "Treatme", "nts", " "];
+            let outArray = []
+            outArray.push(" ");
+            outArray.push(" ");
             let num = 0;
             for (let k = 0; k < blockRandomization.length; k++) {
-                if (k % blockSize === 0) {
-                    num = numBlocks - k / blockSize;
-                    if (num === 3) {
-                        outArray.push("Block");
-                    } else {
-                        outArray.push(" ");
-                    }
-                    outArray.push(num);
-                }
+                // if (k % blockSize === 0) {
+                //     num = numBlocks - k / blockSize;
+                //     // if (num === 3) {
+                //     //     outArray.push("Block");
+                //     // } else {
+                //         // outArray.push(" ");
+                //     // }
+                //     // outArray.push(num);
+                // }
+
                 outArray.push(blockRandomization[k]);
             }
 
-            outArray.push(" ");
-            outArray.push(" ");
-            for (let k = 1; k <= blockSize; k++) {
+            // outArray.push(" ");
+            // outArray.push(" ");
+            for (let k = 1; k <= numTreatments; k++) {
                 outArray.push(k);
             }
 
-            outArray.push(" ");
-            outArray.push(" ");
-            for (let k = 1; k <= blockSize; k++) {
-                if (k === 2) {
-                    outArray.push("Subject");
-                } else if (k === 3) {
-                    outArray.push("Order");
+            // outArray.push(" ");
+            // outArray.push(" ");
+            for (let k = 1; k <= numTreatments; k++) {
+                if (k === 1) {
+                    outArray.push("Blo");
+                } else if (k === 2) {
+                    outArray.push("ck");
                 } else {
                     outArray.push(" ");
                 }
@@ -95,10 +99,10 @@ export default function Randomize1() {
             return <div className="block2"></div>;
         } else if (item === "Block") {
             return <div className="block">{item}</div>;
-        } else if (item === "Subject") {
-            return <div className="treatment">{item}</div>;
-        } else if (item === "Order") {
-            return <div className="order"> {item}</div>;
+        } else if (item === "Blo") {
+            return <div className="Blo">{item}</div>;
+        } else if (item === "ck") {
+            return <div className="ck"> {item}</div>;
         } else if (item === "Treatme") {
             return <div className="treat">{item}</div>;
         } else if (item === "nts") {
@@ -241,7 +245,7 @@ export default function Randomize1() {
                         <div className="indent">col = treatment_colors,</div>
                         <div className="indent">
                             xlab ={" "}
-                            <span className="spanO">"Block"</span>, 
+                            <span className="spanO">"Block"</span>,
                         </div>
                         <div className="indent">
                             axes = <span className="spanB">FALSE</span>

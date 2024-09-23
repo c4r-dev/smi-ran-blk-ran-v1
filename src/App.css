@@ -97,6 +97,26 @@ body {
     font-size: 1.2em;
 }
 
+.Blo {
+    background-color: white;
+    font-family: sans-serif, Menlo, Monaco, 'Courier New', monospace;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    color: black;
+    font-size: 1.2em;
+}
+
+.ck {
+    background-color: white;
+    font-family: sans-serif, Menlo, Monaco, 'Courier New', monospace;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    /* text-indent: 5px; */
+    color: black;
+    font-size: 1.2em;
+}
 .order {
     background-color: white;
     font-family: sans-serif, Menlo, Monaco, 'Courier New', monospace;
