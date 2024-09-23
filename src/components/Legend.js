@@ -4,15 +4,15 @@ export default function Legend() {
 
     return (
         <div className="legend-frame">
-            <h1>Treatments</h1>
+            {/* <h1>Treatments</h1> */}
 
             <div className="label">
                 <div className="color-box block1" ></div>
-                <p>A</p>
+                <p>Treatment</p>
             </div>
             <div className="label">
                 <div className="color-box block2"></div>
-                <p>B</p>
+                <p>Control</p>
             </div>
             {/* <div className="label">
                 <div className="color-box block3"></div>
