@@ -40,3 +40,15 @@ p {
 }
 
 
+/* Mobile device */
+@media (max-width: 768px) {
+    .legend-frame {
+        flex-direction: row;
+        width: 100%;
+        gap: 15px;
+    }
+    .label {
+        gap: 2px;
+    }
+}
+

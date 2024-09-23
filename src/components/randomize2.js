@@ -231,15 +231,15 @@ export default function Randomize1() {
 
             </div >
             <div>
+                {/* <br></br> <div><br></br></div>
                 <br></br> <div><br></br></div>
-                <br></br> <div><br></br></div>
                 <br></br>
                 <br></br>
                 <br></br>
                 <br></br>
                 <br></br>
                 <br></br>
-                <br></br>
+                <br></br> */}
 
                 <input
                     type="button"

@@ -112,7 +112,7 @@ export default function Randomize1() {
 
     return (
 
-        <>
+        <div className="randomize-1-container">
             <div className="top">
                 <h2>Let's Visualize Block Randomization.</h2>
                 <h4>Block randomization is as simple as hitting a button! Free software packages such as <i>blockrand, randomizR, or pspych in R</i> can
@@ -123,7 +123,8 @@ export default function Randomize1() {
             </div>
 
             <div className="container">
-                <div className="box">
+                <div className="code-container">
+
                     <div className="code">
                         <div><br></br></div>
                         <div>library<span className="spanY">(</span>viridisLite<span className="spanY">)</span></div>
@@ -164,33 +165,44 @@ export default function Randomize1() {
                         
                         <br></br>
                     </div>
+                    {/* <div>
+                <input
+                    className="button"
+                    type="button"
+                    onClick={submitRunClick}
+                    value="RUN CODE" />
+                <input
+                    className="button"
+                    type="button"
+                    onClick={submitContinueClick}
+                    value="CONTINUE ACTIVITY" />
+                <br></br>
+                <br></br>
+            </div> */}
                 </div>
 
-                <div className="box">
-                    <div className="block-chart2">
-                        {randomization.map(item => arrayOutput(item))}
-                    </div>
+
+{/* If randomization array is not empty, display the legend and block chart */}
+{randomization.length > 0 && (
+                <div className="chart-container">
 
                     {randomization.length > 0 && 
                         <div className="legend-container">
                             <Legend />
                         </div>
                     }
+
+                    <div className="block-chart2">
+                        {randomization.map(item => arrayOutput(item))}
+                    </div>
+
                 </div>
+                )}
 
 
 
             </div >
             <div>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-               
                 <input
                     className="button"
                     type="button"
@@ -204,6 +216,6 @@ export default function Randomize1() {
                 <br></br>
                 <br></br>
             </div>
-        </>
+        </div>
     )
 }
