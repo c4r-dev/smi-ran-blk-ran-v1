@@ -129,7 +129,7 @@ export default function Randomize1() {
                 </h3>
             </div>
 
-            <div className="container">
+            <div className="randomize-2-body-container">
                 <div className="code-container">
                     <div className="code">
                         <form onClick={submitRunClick}>

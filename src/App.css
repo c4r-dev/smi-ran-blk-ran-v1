@@ -16,6 +16,11 @@ body {
     @media (max-width: 768px) {
         font-size: 11px;
     }
+    @media (min-width: 768px) {
+        /* flex-direction: row; */
+        /* max-width: 50%; */
+        width: 50vw;
+    }
 }
 
 .spanY {
@@ -163,9 +168,23 @@ body {
     /* Mobile device */
     @media (max-width: 768px) {
         flex-direction: column;
-
     }
 }
+
+.randomize-2-body-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; /* Optional: space between items */
+    align-items: flex-start; /* Align items vertically center */
+    width: 100%; /* Container takes full width */
+
+    /* Mobile device */
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+
 
 .top {
     font-family: sans-serif, Menlo, Monaco, 'Courier New', monospace;
