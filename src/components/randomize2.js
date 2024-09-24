@@ -7,9 +7,9 @@ import Legend from "./Legend";
 export default function Randomize1() {
     const navigate = useNavigate();
 
-    const [numBlocks, setNumBlocks] = useState(2);
-    // const [blockSize, setBlockSize] = useState(4);
-    const blockSize = 10;
+    const [blockSize, setBlockSize] = useState(10);
+    // const blockSize = 10;
+    const numBlocks = 2;
     const numTreatments = 2;
     const [randomization, setRandomization] = useState([]);
 
@@ -18,13 +18,13 @@ export default function Randomize1() {
     };
 
     const handleBlocksChange = (e) => {
-        setNumBlocks(e.target.value);
+        setBlockSize(e.target.value);
     };
 
     const submitRunClick = () => {
-        if (numBlocks < 2 || numBlocks > 2) {
-            alert("n_blocks must be > 1 and < 3");
-            setNumBlocks(2);
+        if (blockSize < 2 || blockSize > 10) {
+            alert("blockSize must be > 1 and < 11");
+            setBlockSize(10);
         } else {
 
             function createBlockRandomization(numBlocks, blockSize) {
@@ -129,7 +129,7 @@ export default function Randomize1() {
             <div className="top">
                 <h3>Hover over the code for a detailed description.</h3>
                 <h3>
-                    Change n_blocks, and click "RUN CODE" to view Block
+                    Change block_size, and click "RUN CODE" to view Block
                     Randomization.
                 </h3>
             </div>
@@ -165,13 +165,9 @@ export default function Randomize1() {
                                     <div>
                                         n_blocks &lt;-{" "}
                                         <span className="spanLG">
-                                            <input
-                                                type="text"
-                                                value={numBlocks}
-                                                onChange={handleBlocksChange}
-                                                className="custom-input"
-                                            />
+                                            {numBlocks}
                                         </span>
+                                        
                                     </div>
                                     <div>
                                         <br></br>
@@ -200,8 +196,16 @@ export default function Randomize1() {
                                     <div>
                                         block_size &lt;-{" "}
                                         <span className="spanLG">
-                                            {blockSize}
+                                            <input
+                                                type="text"
+                                                value={blockSize}
+                                                onChange={handleBlocksChange}
+                                                className="custom-input"
+                                            />
                                         </span>
+                                        {/* <span className="spanLG">
+                                            {blockSize}
+                                        </span> */}
                                     </div>
                                     <div>
                                         stopifnot
