@@ -30,6 +30,7 @@ p {
     align-items: left;
     justify-content: left;
     gap: 10px;
+    margin-left: 5px;
 }
 
 .color-box {

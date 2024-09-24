@@ -10,18 +10,12 @@ export default function Legend() {
                 <div className="color-box block1" ></div>
                 <p>Treatment</p>
             </div>
+            
             <div className="label">
                 <div className="color-box block2"></div>
                 <p>Control</p>
             </div>
-            {/* <div className="label">
-                <div className="color-box block3"></div>
-                <p>C</p>
-            </div>
-            <div className="label">
-                <div className="color-box block4"></div>
-                <p>D</p>
-            </div> */}
+            
         </div>
     );
 }
