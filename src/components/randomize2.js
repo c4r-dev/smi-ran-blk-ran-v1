@@ -7,9 +7,9 @@ import Legend from "./Legend";
 export default function Randomize1() {
     const navigate = useNavigate();
 
-    const [numBlocks, setNumBlocks] = useState(6);
+    const [numBlocks, setNumBlocks] = useState(2);
     // const [blockSize, setBlockSize] = useState(4);
-    const blockSize = 4;
+    const blockSize = 10;
     const numTreatments = 2;
     const [randomization, setRandomization] = useState([]);
 
@@ -22,20 +22,21 @@ export default function Randomize1() {
     };
 
     const submitRunClick = () => {
-        if (numBlocks < 3 || numBlocks > 8) {
-            alert("n_blocks must be > 2 and < 9");
-            setNumBlocks(6);
+        if (numBlocks < 2 || numBlocks > 2) {
+            alert("n_blocks must be > 1 and < 3");
+            setNumBlocks(2);
         } else {
+
             function createBlockRandomization(numBlocks, blockSize) {
                 let blockRandomization = [];
                 for (let i = 0; i < numBlocks; i++) {
                     let block = [];
                     // Fill the block with equal numbers of each group
-                    for (let j = 0; j < blockSize / blockSize; j++) {
+                    for (let j = 0; j < blockSize / numBlocks; j++) {
                         block.push("purple1");
                         block.push("purple2");
-                        block.push("purple3");
-                        block.push("purple4");
+                        // block.push("purple3");
+                        // block.push("purple4");
                     }
                     // Shuffle the block
                     block = shuffleArray(block);
@@ -44,34 +45,38 @@ export default function Randomize1() {
 
                 // console.log(blockRandomization)
 
-                let outArray = [" ", " ", " ", "Treatme", "nts", " "];
-                let num = 0;
+                // let outArray = [" ", " ", " ", "Treatme", "nts", " "];
+                let outArray = []
+                outArray.push(" ");
+                outArray.push(" ");
+                // let num = 0;
                 for (let k = 0; k < blockRandomization.length; k++) {
-                    if (k % blockSize === 0) {
-                        num = numBlocks - k / blockSize;
-                        if (num === 3) {
-                            outArray.push("Block");
-                        } else {
-                            outArray.push(" ");
-                        }
-                        outArray.push(num);
-                    }
+                    // if (k % blockSize === 0) {
+                    //     num = numBlocks - k / blockSize;
+                    //     // if (num === 3) {
+                    //     //     outArray.push("Block");
+                    //     // } else {
+                    //         // outArray.push(" ");
+                    //     // }
+                    //     // outArray.push(num);
+                    // }
+
                     outArray.push(blockRandomization[k]);
                 }
 
-                outArray.push(" ");
-                outArray.push(" ");
-                for (let k = 1; k <= blockSize; k++) {
+                // outArray.push(" ");
+                // outArray.push(" ");
+                for (let k = 1; k <= numTreatments; k++) {
                     outArray.push(k);
                 }
 
-                outArray.push(" ");
-                outArray.push(" ");
-                for (let k = 1; k <= blockSize; k++) {
-                    if (k === 2) {
-                        outArray.push("Subject");
-                    } else if (k === 3) {
-                        outArray.push("Order");
+                // outArray.push(" ");
+                // outArray.push(" ");
+                for (let k = 1; k <= numTreatments; k++) {
+                    if (k === 1) {
+                        outArray.push("Blo");
+                    } else if (k === 2) {
+                        outArray.push("ck");
                     } else {
                         outArray.push(" ");
                     }
@@ -106,10 +111,10 @@ export default function Randomize1() {
             return <div className="block2"></div>;
         } else if (item === "Block") {
             return <div className="block">{item}</div>;
-        } else if (item === "Subject") {
-            return <div className="treatment">{item}</div>;
-        } else if (item === "Order") {
-            return <div className="order"> {item}</div>;
+        } else if (item === "Blo") {
+            return <div className="Blo">{item}</div>;
+        } else if (item === "ck") {
+            return <div className="ck"> {item}</div>;
         } else if (item === "Treatme") {
             return <div className="treat">{item}</div>;
         } else if (item === "nts") {
@@ -134,7 +139,7 @@ export default function Randomize1() {
                     <div className="code">
                         <form onClick={submitRunClick}>
                             <div>
-                                <HoverOverlay overlayText="viridisLite is an R package that provides color palettes for use in R graphics.">
+                                <HoverOverlay overlayText="The viridisLite package will be used to assign colors to different treatments.">
                                     <div>
                                         library<span className="spanY">(</span>
                                         viridisLite
@@ -147,11 +152,9 @@ export default function Randomize1() {
 
                             <div>
                                 <HoverOverlay
-                                    overlayText="n_blocks <- 6: Defines that there are 6 blocks in the experiment.
-                                    n_treatments <- 2: Defines that there are 2 different treatments to be applied. 
-                                    block_size <- 4 must be a multiple of the number of treatments. 
-                                    stopifnot(block_size %% n-treatments == 0) uses modulus arithmatic to be sure is a multiple
-                                    of the number of treatments."
+                                    overlayText="The number of blocks (in this case, 2) indicates how many sets of random assignments for the treatments will be generated.
+                                    Here, there are 2 treatments (which could represent a treatment group and a control group).
+                                    The block_size is set to 10, meaning each block will have 10 treatment assignments, and it must be divisible by the number of treatments (2)."
                                 >
                                     <div>
                                         <span className="spanG">
@@ -247,6 +250,9 @@ export default function Randomize1() {
                                         <span className="spanY">(</span>n =
                                         n_blocks<span className="spanY">)</span>
                                     </div>
+                                    <div className="indent">
+                                        t<span className="spanY">()</span>
+                                    </div>
                                 </HoverOverlay>
                             </div>
 
@@ -267,10 +273,10 @@ export default function Randomize1() {
                                     </div>
                                 </HoverOverlay>
 
-                                <HoverOverlay overlayText="par(xpd = TRUE, mar = c(5, 4, 4, 11)): Adjusts the plotting parameters to allow space for the legend and to make sure plotting is not clipped.">
+                                <HoverOverlay overlayText="par(xpd = FALSE, mar = c(5, 4, 4, 11)): Adjusts the plotting parameters to allow space for the legend and to make sure plotting is not clipped.">
                                     <div>
                                         par<span className="spanY">(</span>xpd ={" "}
-                                        <span className="spanB">TRUE</span>, mar
+                                        <span className="spanB">FALSE</span>, mar
                                         = c<span className="spanP">(</span>
                                         <span className="spanLG">5</span>,{" "}
                                         <span className="spanLG">4</span>,{" "}
@@ -281,7 +287,7 @@ export default function Randomize1() {
                                     </div>
                                 </HoverOverlay>
 
-                                <HoverOverlay overlayText='image(study_blocks, col = treatment_colors, xlab = "Subject Order", ylab = "Block", axes = FALSE): Creates an image plot where each block (column) shows the random order of treatments using the specified colors.'>
+                                <HoverOverlay overlayText='image(study_blocks, col = treatment_colors, xlab = "Block", axes = FALSE): Creates an image plot where each block (column) shows the random order of treatments using the specified colors.'>
                                     <div>
                                         image<span className="spanY">(</span>
                                         study_blocks,
@@ -292,10 +298,9 @@ export default function Randomize1() {
                                     <div className="indent">
                                         xlab ={" "}
                                         <span className="spanO">
-                                            "Subject Order"
+                                            "Block"
                                         </span>
-                                        , ylab ={" "}
-                                        <span className="spanO">"Block"</span>,
+                                        ,
                                     </div>
                                     <div className="indent">
                                         axes ={" "}
@@ -304,30 +309,32 @@ export default function Randomize1() {
                                     </div>
                                 </HoverOverlay>
 
-                                <HoverOverlay overlayText='axis(1, at = seq(0, 1, length.out = n_treatments), labels = seq(n_treatments)) and axis(2, at = seq(0, 1, length.out = n_blocks), labels = seq(n_blocks)): Add labeled axes for the treatments and blocks. legend(1 + 1.25 / n_treatments, 1, title = "Treatments", legend = LETTERS[seq(n_treatments)], fill = treatment_colors): Adds a legend to the plot, indicating which color corresponds to which treatment.'>
+                                <HoverOverlay overlayText='axis(1, at = seq(0, 1, length.out = n_blocks), labels = seq(block_size)) and grid(nx = n_blocks, ny = block_size, col = "red", lty = 1, lwd = 1): Add labeled axes for the treatments and blocks. legend(1 + 1.25 / n_blocks, 1,
+legend = c("Treatment", "Control"), fill = treatment_colors): Adds a legend to the plot, indicating which color corresponds to which treatment.'>
                                     <div>
                                         axis<span className="spanY">(</span>
                                         <span className="spanLG">1</span>, at =
                                         seq<span className="spanP">(</span>
                                         <span className="spanLG">0</span>,{" "}
                                         <span className="spanLG">1</span>,
-                                        length.out = block_size
+                                        length.out = n_blocks
                                         <span className="spanP">)</span>, labels
                                         = seq<span className="spanP">(</span>
                                         block_size
                                         <span className="spanP">)</span>
                                         <span className="spanY">)</span>
                                     </div>
+
                                     <div>
-                                        axis<span className="spanY">(</span>
-                                        <span className="spanLG">2</span>, at =
-                                        seq<span className="spanP">(</span>
-                                        <span className="spanLG">0</span>,{" "}
-                                        <span className="spanLG">1</span>,
-                                        length.out = n_blocks
-                                        <span className="spanP">)</span>, labels
-                                        = seq<span className="spanP">(</span>
-                                        n_blocks<span className="spanP">)</span>
+                                        grid<span className="spanY">(</span>
+                                        nx = n_blocks, ny = block_size, col = "red", lty =
+                                        <span className="spanLG"> 1</span>, lwd =
+                                        <span className="spanLG"> 1</span>
+                                        <span className="spanY">)</span>
+                                    </div>
+                                    <div>
+                                        par<span className="spanY">(</span>xpd ={" "}
+                                        <span className="spanB">TRUE</span>
                                         <span className="spanY">)</span>
                                     </div>
 
@@ -335,24 +342,18 @@ export default function Randomize1() {
                                         legend<span className="spanY">(</span>
                                         <span className="spanLG">1</span> +{" "}
                                         <span className="spanLG">1.25</span> /
-                                        block_size,{" "}
-                                        <span className="spanLG">1</span>, title
-                                        ={" "}
-                                        <span className="spanO">
-                                            "Treatments"
-                                        </span>
-                                        ,
+                                        n_blocks,{" "}
+                                        <span className="spanLG">1</span>,
                                     </div>
+
                                     <div className="indent">
-                                        legend = LETTERS
-                                        <span className="spanP">[</span>seq
-                                        <span className="spanLB">(</span>
-                                        n_treatments
-                                        <span className="spanLB">)</span>
-                                        <span className="spanP">]</span>, fill =
-                                        treatment_colors
-                                        <span className="spanY">)</span>
+                                        legend = c<span className="spanP">(</span>
+                                        <span className="spanO">"Treatment"</span>,
+                                        <span className="spanO"> "Control"</span>
+                                        <span className="spanP">)</span>, fill =
+                                        treatment_colors<span className="spanY">)</span>
                                     </div>
+
                                     <br></br>
                                 </HoverOverlay>
                             </div>
