@@ -167,7 +167,7 @@ export default function Randomize1() {
                                         <span className="spanLG">
                                             {numBlocks}
                                         </span>
-                                        
+
                                     </div>
                                     <div>
                                         <br></br>
