@@ -21,11 +21,11 @@ export default function Randomize1() {
             for (let i = 0; i < numBlocks; i++) {
                 let block = [];
                 // Fill the block with equal numbers of each group
-                for (let j = 0; j < blockSize / blockSize; j++) {
+                for (let j = 0; j < blockSize / numBlocks; j++) {
                     block.push("purple1");
                     block.push("purple2");
-                    block.push("purple3");
-                    block.push("purple4");
+                    // block.push("purple3");
+                    // block.push("purple4");
                 }
                 // Shuffle the block
                 block = shuffleArray(block);
@@ -38,7 +38,7 @@ export default function Randomize1() {
             let outArray = []
             outArray.push(" ");
             outArray.push(" ");
-            let num = 0;
+            // let num = 0;
             for (let k = 0; k < blockRandomization.length; k++) {
                 // if (k % blockSize === 0) {
                 //     num = numBlocks - k / blockSize;
@@ -125,7 +125,7 @@ export default function Randomize1() {
                 <h4>
                     But what is happening under the hood? Click "RUN CODE" on
                     this R code to see a visualization of a block randomized
-                    study with 4 treatments.
+                    study with 2 treatments.
                 </h4>
             </div>
 
